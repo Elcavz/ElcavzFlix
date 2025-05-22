@@ -12,6 +12,7 @@ import { env } from '@/env.mjs';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
+import PopunderAd from '@/components/ads/PopunderAd';
 
 export const runtime = 'edge';
 
@@ -115,6 +116,7 @@ export default function RootLayout({
             </>
           )}
         </ThemeProvider>
+        <PopunderAd />
       </body>
     </html>
   );

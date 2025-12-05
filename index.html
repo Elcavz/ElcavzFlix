@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell - Website Closing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: #ff6b8b;
+            text-shadow: 0 0 10px rgba(255, 107, 139, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #a9d6ff;
+        }
+        
+        .message-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #ff6b8b;
+            text-align: left;
+        }
+        
+        .message-box p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            color: #ffcc00;
+            font-weight: 600;
+        }
+        
+        .emoji-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .emoji {
+            font-size: 2.5rem;
+            animation: float 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .emoji:hover {
+            transform: scale(1.3);
+        }
+        
+        .emoji:nth-child(2) { animation-delay: 0.5s; }
+        .emoji:nth-child(3) { animation-delay: 1s; }
+        .emoji:nth-child(4) { animation-delay: 1.5s; }
+        .emoji:nth-child(5) { animation-delay: 2s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .reasons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .reason-card {
+            background: rgba(255, 107, 139, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .reason-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .reason-card i {
+            font-size: 2.5rem;
+            color: #ff6b8b;
+            margin-bottom: 15px;
+        }
+        
+        .reason-card h3 {
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+        
+        .closing-date {
+            background: rgba(255, 107, 139, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            display: inline-block;
+        }
+        
+        .closing-date h3 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        
+        #countdown {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff6b8b;
+            letter-spacing: 2px;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .support-btn {
+            background: linear-gradient(90deg, #ff6b8b, #ff8e53);
+            color: white;
+        }
+        
+        .support-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 139, 0.4);
+        }
+        
+        .contact-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            color: #a9d6ff;
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #ff6b8b;
+            transform: translateY(-5px);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .heart {
+            color: #ff6b8b;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .container { padding: 25px; }
+            .message-box { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-exclamation-triangle"></i> Important Announcement</h1>
+        <p class="subtitle">With a heavy heart, I must share some difficult news...</p>
+        
+        <div class="message-box">
+            <p>Dear visitors,</p>
+            <p>After much consideration, I've decided to close this website. This wasn't an easy decision, but I've come to realize that <span class="highlight">I don't have enough supporters</span> to justify continuing the effort and resources required to maintain it.</p>
+            <p>What hurts the most is that even <span class="highlight">my very important person</span> didn't show enough interest or support for this project that meant so much to me. When the people closest to you don't believe in your work, it becomes incredibly difficult to keep going.</p>
+            <p>Thank you to everyone who visited, shared, or showed appreciation for this website. I truly value each one of you.</p>
+            <p>With sincere gratitude and sadness,</p>
+            <p>Elcavz</p>
+        </div>
+        
+        <div class="emoji-container">
+            <div class="emoji">😔</div>
+            <div class="emoji">💔</div>
+            <div class="emoji">👋</div>
+            <div class="emoji">😢</div>
+            <div class="emoji">🙏</div>
+        </div>
+        
+        <div class="reasons">
+            <div class="reason-card">
+                <i class="fas fa-users-slash"></i>
+                <h3>Lack of Supporters</h3>
+                <p>Not enough people showed interest or engagement to sustain the website long-term.</p>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-heart-broken"></i>
+                <h3>Personal Disappointment</h3>
+                <p>Even close relationships didn't provide the encouragement needed to continue.</p>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-battery-quarter"></i>
+                <h3>Resources Exhausted</h3>
+                <p>Time, energy, and financial resources have been depleted without adequate return.</p>
+            </div>
+        </div>
+        
+        <div class="closing-date">
+            <h3>Website Closing Date</h3>
+            <p>The website will be permanently taken down on:</p>
+            <div id="countdown">30 days</div>
+        </div>
+        
+        <div class="buttons">
+            <button class="support-btn" id="lastSupportBtn">
+                <i class="fas fa-hands-helping"></i> Show Last-Minute Support
+            </button>
+            <button class="contact-btn" id="contactBtn">
+                <i class="fas fa-envelope"></i> Send a Message
+            </button>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" title="Follow on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="Check out my GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Visit my other projects"><i class="fas fa-briefcase"></i></a>
+        </div>
+        
+        <div class="footer">
+            <p>Made with <span class="heart">❤️</span> but closing due to lack of support | Last updated: <span id="currentDate"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Set closing date (30 days from now)
+        const closingDate = new Date();
+        closingDate.setDate(closingDate.getDate() + 30);
+        
+        // Format date for display
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('countdown').textContent = closingDate.toLocaleDateString('en-US', options);
+        
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', options);
+        
+        // Last support button functionality
+        document.getElementById('lastSupportBtn').addEventListener('click', function() {
+            const emojis = ['😔', '💔', '👋', '😢', '🙏'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Change button text and show message
+            this.innerHTML = `<i class="fas fa-heart"></i> Thank You for Your Support ${randomEmoji}`;
+            this.style.background = 'linear-gradient(90deg, #4CAF50, #8BC34A)';
+            this.style.transform = 'scale(1.05)';
+            
+            // Show alert message
+            setTimeout(() => {
+                alert("Thank you for your support! It means a lot, even at this late stage. Unfortunately, the decision to close is final, but I appreciate your gesture.");
+            }, 300);
+            
+            // Track support count (in a real scenario, this would be sent to a server)
+            if (typeof localStorage !== 'undefined') {
+                let supportCount = localStorage.getItem('lastMinuteSupport') || 0;
+                supportCount = parseInt(supportCount) + 1;
+                localStorage.setItem('lastMinuteSupport', supportCount);
+                console.log(`Last minute supports: ${supportCount}`);
+            }
+        });
+        
+        // Contact button functionality
+        document.getElementById('contactBtn').addEventListener('click', function() {
+            const email = "contact@example.com"; // Replace with actual email
+            const subject = "Message about website closure";
+            const body = "I saw your website closure announcement and wanted to reach out...";
+            
+            // Create a fake contact form since we can't actually send email without backend
+            const message = "Since this is a demo, we can't actually send an email, but in a real implementation, this would open your email client or a contact form.\n\n";
+            const contactInfo = `You can reach me at: ${email}\n\nSubject: ${subject}\n\nMessage: ${body}`;
+            
+            alert(message + contactInfo);
+            
+            // Change button appearance
+            this.innerHTML = `<i class="fas fa-paper-plane"></i> Contact Info Displayed`;
+            this.style.background = 'rgba(76, 175, 80, 0.2)';
+            this.style.borderColor = '#4CAF50';
+            
+            // Reset button after 5 seconds
+            setTimeout(() => {
+                this.innerHTML = `<i class="fas fa-envelope"></i> Send a Message`;
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }, 5000);
+        });
+        
+        // Make emojis interactive
+        document.querySelectorAll('.emoji').forEach(emoji => {
+            emoji.addEventListener('click', function() {
+                const original = this.textContent;
+                const reactions = {
+                    '😔': ['😞', '😥', '😟', '😔'],
+                    '💔': ['❤️‍🔥', '❤️‍🩹', '💔', '💔'],
+                    '👋': ['👋', '✋', '🤚', '🖐️'],
+                    '😢': ['😭', '😥', '😢', '😿'],
+                    '🙏': ['🙏', '🤲', '🙌', '✌️']
+                };
+                
+                // If we have reactions for this emoji, cycle through them
+                let newEmoji = original;
+                if (reactions[original]) {
+                    const currentIndex = reactions[original].indexOf(original);
+                    const nextIndex = (currentIndex + 1) % reactions[original].length;
+                    newEmoji = reactions[original][nextIndex];
+                }
+                
+                this.textContent = newEmoji;
+                
+                // Add a temporary animation
+                this.style.transform = 'scale(1.5)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 300);
+            });
+        });
+        
+        // Add a subtle background animation
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            document.body.style.background = `
+                radial-gradient(circle at ${x * 100}% ${y * 100}%, #2d1b69 0%, #16213e 30%, #1a1a2e 70%)
+            `;
+        });
+    </script>
+</body>
+</html>

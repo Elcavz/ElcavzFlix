@@ -52,12 +52,11 @@ const SiteFooter = () => {
         <p className="text-center text-xs leading-loose sm:text-sm md:text-left">
           Built by{" "}
           <a
-            href={siteConfig.links.twitter}
+            href="https://facebook.com/FvckinUrPeys"
             target="_blank"
-            rel="noreferrer"
             className="font-medium underline underline-offset-4"
           >
-            {siteConfig.author}
+            Renz Sayaman
           </a>
           .{" "}
           <span

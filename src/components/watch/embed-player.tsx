@@ -48,7 +48,7 @@ function EmbedPlayer(props: EmbedPlayerProps) {
 
   const handleChangeEpisode = (episode: IEpisode): void => {
     const { show_id: id, episode_number: eps } = episode;
-    handleSetIframeUrl(`https://vidsrc.cc/v2/embed/anime/tmdb${id}/${eps}/sub`);
+    handleSetIframeUrl(`https://player.videasy.net/tv/${id}/1/${eps}`);
   };
 
   const handleAnime = async (movieId: string) => {
@@ -70,7 +70,7 @@ function EmbedPlayer(props: EmbedPlayerProps) {
       seasonWithEpisodes.map((res: AxiosResponse<ISeason>) => res.data),
     );
     handleSetIframeUrl(
-      `https://vidsrc.cc/v2/embed/anime/tmdb${id}/1/sub?autoPlay=false`,
+      `https://player.videasy.net/tv/${id}/1/1`,
     );
   };
 

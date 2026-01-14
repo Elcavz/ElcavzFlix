@@ -5,5 +5,5 @@ export const revalidate = 3600;
 
 export default function Page({ params }: { params: { slug: string } }) {
   const id = params.slug.split('-').pop();
-  return <EmbedPlayer url={`https://player.videasy.net/tv/${id}/1/1`} />;
+  return <EmbedPlayer url={`https://player.videasy.net/tv/${id}/1/1?episodeSelector=true&autoplayNextEpisode=true`} />;
 }
